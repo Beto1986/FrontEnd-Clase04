@@ -64,23 +64,6 @@ if (num >= 1) {
     alert("El número ingresado es cero");
 }
 
-/* Crear un conversor de medidas. Pedirle al usuario que ingrese una medida en metros y pasarlo a pies, centimetros y pulgadas. Mostrar por consola los tres resultados.*/
-let medidametro = parseInt(prompt("Ingrese medida en metros"));
-// Defino las constantes equivalentes a metros.
-const medidacentimetro = 100;
-const medidapies = 3.281;
-const medidapulgadas = 39.37;
-// Convierto las medidas
-let centimetro = medidametro * medidacentimetro;
-let pies = medidametro * medidapies;
-let pulgadas = medidametro * medidapulgadas;
-// Muestro las medidas convertidas
-console.log("Pies: " + pies);
-console.log("Centímetros: " + centimetro);
-console.log("Pulgadas: " + pulgadas);
-
-/* Solicitar al usuario dos números y mostrar el resultado de la suma. Luego solicitar al usuario un tercer número y multiplicarlo por el resultado anterior. Mostrar el resultado final.*/
-
 // Ejercicio 6
 /* Solicitar al usuario que ingrese un monto. Si el monto es mayor a 2000 que aplique un descuento del 10%. Mostrar el total a pagar. */
 let monto = parseFloat(prompt("Ingrese un monto"));
