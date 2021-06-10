@@ -1,3 +1,52 @@
+// ******************** EJERCICIOS CON CADENAS DE TEXTO ******************** //
+
+// 1- Solicitar al usuario que ingrese un texto y validar si contiene la letra “a”.
+let nombre = prompt("Ingrese su nombre");
+alert("Verificar si contiene la letra 'a': " + nombre.includes("a"));
+
+// 2- Solicitar al usuario que ingrese un texto y mostrarlo todo en minúsculas y todo en mayúsculas.
+let text = prompt("Ingrese un texto en mayusculas y minusculas");
+alert("Texto en minusculas: " + text.toLowerCase());
+alert("Texto en mayusculas: " + text.toUpperCase());
+
+// 3- Solicitar al usuario que ingrese una palabra y mostrar con qué letra comienza.
+let text = prompt("Ingrese una palabra");
+alert("Su palabra comienza con la letra: " + text.charAt(0));
+
+// 4- Solicitar al usuario que ingrese una frase y mostrar cuántos caracteres tiene
+let text = prompt("Ingrese una frase");
+alert("Su frase tiene: " + text.length + " caracteres");
+
+// 5- Solicitar a un usuario que ingrese un número y devolver cuántos dígitos tiene.
+let numero = parseInt(prompt("Ingrese un número"));
+alert("Su número tiene: " + numero.toString().length + " dígitos"); // debo pasar a string para contar
+
+// 6- Solicitar al usuario que ingrese una palabra y mostrar con qué letra termina.
+let palabra = prompt("Ingrese una palabra");
+alert("Su palabra termina con la letra: " + palabra.charAt(palabra.length - 1));
+
+// 7- Ingresar una cadena de texto y reemplazar los espacios por asteriscos.
+let text = prompt("Ingrese su texto");
+//console.log(text.replace(" ", "*"));
+text = text.replace(/ /g, "*"); // Para que no solo remplace el primer caracter, sino todos los de la cadena.
+alert("Su texto remplazado es el siguiente: " + text);
+
+// 8- Solicitar al usuario una letra y una cadena de texto e indicar si contiene la letra indicada.
+let letra = prompt("Ingrese una letra");
+let text = prompt("Ingrese su texto");
+alert("El texto ingresado contiene la letra " + letra + "?: " + text.includes(letra));
+
+// 9- Solicitar un texto y mostrarlo todo menos la primera letra.
+let text = prompt("Ingrese su texto");
+alert("Su texto queda de la siguiente manera: " + text.slice(1));
+
+// 10- Solicitar al usuario que ingrese su nombre en minúscula y mostrarlo con la primera letra mayúscula.
+let nombre = prompt("Ingrese su nombre en minúscula");
+alert("Su nombre con la primer letra en mayúscula es el siguiente: " + nombre.slice(0, 1).toUpperCase() + nombre.slice(1));
+
+
+// ******************** EJERCICIOS CON CONDICIONALES (PARTE 1): ******************** //
+
 // Ejercicio 1
 /* Agregar al ejercicio 5 de Variables un validador de datos. Si ingresa un número entonces que me calcule las medidas, sino, que muestre un mensaje de error. */
 
@@ -21,6 +70,7 @@ if (isNaN(medidametro)) {
 
 // Ejercicio 2
 /* Solicitar al usuario su edad. Si es menor de 18, decir que es menor de edad, sino decir que es mayor . */
+
 let edad = parseInt(prompt("Ingrese su edad"));
 if (edad < 18) {
     alert("Usted es menor de edad");
@@ -30,6 +80,7 @@ if (edad < 18) {
 
 // Ejercicio 3
 /*Contexto: Una heladería. Solicitar al usuario sus sabores en un solo input. Luego preguntar si quiere cobertura de chocolate. Si dice Sí, mostrar el valor del helado 180 con el pedido completo: “Su helado sabor …. con cobertura de chocolate cuesta $180”. En caso de que no la requiera, será lo mismo pero sin cobertura de chocolate y el valor es de $150.*/
+
 let sabores = prompt("¿Qué sabores desea?");
 let cobertura = prompt("¿Desea agregarle cobertura de chocolate?(si/no)");
 if (cobertura === "si") {
@@ -40,6 +91,7 @@ if (cobertura === "si") {
 
 // Ejercicio 4
 /* Mejorar el ejercicio 1 de Variables: Solicitar al usuario dos números y mostrar por consola el resultado de la suma de ambos. Informar al usuario si el número resultante es par o impar. */
+
 let num1 = parseInt(prompt("Ingrese un número"));
 let num2 = parseInt(prompt("Ingrese otro número"));
 let suma = num1 + num2;
@@ -55,6 +107,7 @@ if (suma % 2 === 0) {
 
 // Ejercicio 5
 /* Solicitar al usuario un número e indicar si es positivo, negativo o cero. */
+
 let num = parseInt(prompt("Ingrese un número"));
 if (num >= 1) {
     alert("El número ingresado es positivo");
@@ -66,6 +119,7 @@ if (num >= 1) {
 
 // Ejercicio 6
 /* Solicitar al usuario que ingrese un monto. Si el monto es mayor a 2000 que aplique un descuento del 10%. Mostrar el total a pagar. */
+
 let monto = parseFloat(prompt("Ingrese un monto"));
 if (monto > 2000) {
     monto = monto - (monto * 0.1); // Al monto le aplico el 10% de descuento
@@ -76,6 +130,7 @@ if (monto > 2000) {
 
 // Ejercicio 7
 /* Solicitar al usuario que ingrese una cadena de texto y luego un una posición. Indicar si el dígito de esa posición es vocal o no lo es. (Puede ser consonante, espacio, comilla, etc.) */
+
 let texto = prompt("Ingrese un texto");
 let posicion = parseInt(prompt("Ingrese una posición (número)"));
 let posiciontexto = texto.charAt(posicion); // Lo obtengo para ver de que caracter se trata la posición.
@@ -87,6 +142,7 @@ if (posiciontexto === "a" || posiciontexto === "e" || posiciontexto === "i" || p
 
 // Ejercicio 8
 /* Solicitar al usuario que ingrese una nota del 1 al 10. Si está entre 1 y 3 responder: Aplazado, si está entre 4 y 5 responder: Reprobado , y 6 o más aprobado. */
+
 let nota = parseInt(prompt("Ingrese una nota del 1 al 10"));
 if (nota >= 1 && nota <= 3) {
     alert("El alumno se encuentra aplazado");
@@ -100,6 +156,7 @@ if (nota >= 1 && nota <= 3) {
 
 // Ejercicio 9
 // Solicitar al usuario dos números e indicar cual es el mayor o si son iguales.
+
 let num1 = parseInt(prompt("Ingrese número 1"));
 let num2 = parseInt(prompt("Ingrese número 2"));
 if (num1 > num2) {
@@ -112,6 +169,7 @@ if (num1 > num2) {
 
 // Ejercicio 10
 // Solicitar al usuario que indique un mes (del 1 al 12) e indicar si tiene 30 días, 31 días o 28/29 días.
+
 let nromes = parseInt(prompt("Ingrese un mes del 1 al 12"));
 switch (nromes) {
     case 1:
@@ -156,6 +214,7 @@ switch (nromes) {
 
 //Ejercicio 11
 //Solicitar al usuario que ingrese 3 números e indicar cual es el mayor.
+
 let num1 = parseInt(prompt("Ingrese el primer número"));
 let num2 = parseInt(prompt("Ingrese el segundo número"));
 let num3 = parseInt(prompt("Ingrese el tercer número"));
@@ -171,8 +230,10 @@ if (num1 > num2 && num1 > num3) {
 // Ejercicio 12
 /* Solicitar al usuario que ingrese su edad y una bebida. (Entre: Cerveza, jugo, agua). Si pide alcohol y es menor de edad que le salte un alerta indicando que no puede realizar la compra. Indicar el costo y solicitar al usuario que indique con cuanto va a pagar e indicar cuánto sería su vuelto. 
 (Ej: La cerveza cuesta $50  y paga con 100, se le debe devolver $50. Si indica que paga con menos de lo que cuesta el producto, indicar un error). */
+
 let edad = parseInt(prompt("Ingrese su edad"));
 let bebida = prompt("Ingrese su bebida: Puede ser cerveza, jugo o agua");
+let costo = 0;
 const cerveza = 150;
 const jugo = 100;
 const agua = 50;
@@ -182,45 +243,60 @@ if (bebida === "cerveza" && edad < 18) {
 } else {
     if (bebida === "cerveza") {
         alert("El costo de la cerveza es: $" + cerveza);
+        costo = cerveza;
     } else if (bebida === "jugo") {
         alert("El costo del jugo es: $" + jugo);
+        costo = jugo;
     } else if (bebida === "agua") {
         alert("El costo del agua es: $" + agua);
+        costo = agua;
     }
 
     let dineroabonado = parseInt(prompt("¿Con cuánto dinero va a abonar?"));
     let vuelto = 0;
-    switch (bebida) {
-        case "cerveza":
-            if (dineroabonado < cerveza) {
-                alert("El dinero abonado $" + dineroabonado + " es menor a: $" + cerveza + " que es el costo de la cerveza");
-            } else {
-                vuelto = dineroabonado - cerveza;
-                alert("Su vuelto es: $" + vuelto);
-            }
-            break;
-        case "jugo":
-            if (dineroabonado < jugo) {
-                alert("El dinero abonado $" + dineroabonado + " es menor a: $" + jugo + " que es el costo del jugo");
-            } else {
-                vuelto = dineroabonado - jugo;
-                alert("Su vuelto es: $" + vuelto);
-            }
-            break;
-        case "agua":
-            if (dineroabonado < agua) {
-                alert("El dinero abonado $" + dineroabonado + " es menor a: $" + agua + " que es el costo del agua");
-            } else {
-                vuelto = dineroabonado - agua;
-                alert("Su vuelto es: $" + vuelto);
-            }
-            break;
+    if (dineroabonado < costo) {
+        alert("El dinero abonado $" + dineroabonado + " es menor a: $" + costo + " que es el costo de tu " + bebida);
+    } else {
+        vuelto = dineroabonado - costo;
+        alert("Su vuelto es: $" + vuelto);
     }
 }
+
+// comentado, lógica optimizada en clase
+//let vuelto = 0;
+// switch (bebida) {
+//     case "cerveza":
+//         if (dineroabonado < cerveza) {
+//             alert("El dinero abonado $" + dineroabonado + " es menor a: $" + cerveza + " que es el costo de la cerveza");
+//         } else {
+//             vuelto = dineroabonado - cerveza;
+//             alert("Su vuelto es: $" + vuelto);
+//         }
+//         break;
+//     case "jugo":
+//         if (dineroabonado < jugo) {
+//             alert("El dinero abonado $" + dineroabonado + " es menor a: $" + jugo + " que es el costo del jugo");
+//         } else {
+//             vuelto = dineroabonado - jugo;
+//             alert("Su vuelto es: $" + vuelto);
+//         }
+//         break;
+//     case "agua":
+//         if (dineroabonado < agua) {
+//             alert("El dinero abonado $" + dineroabonado + " es menor a: $" + agua + " que es el costo del agua");
+//         } else {
+//             vuelto = dineroabonado - agua;
+//             alert("Su vuelto es: $" + vuelto);
+//         }
+//         break;
+// }
+//}
+// comentado, lógica optimizada en clase
 
 
 // Ejercicio 13
 // Solicitar al usuario un número de mes y devolver el nombre. (Ej: Ingreso 4 y me devuelve “Abril”).
+
 let nromes = parseInt(prompt("Ingrese un mes del 1 al 12"));
 switch (nromes) {
     case 1:
@@ -282,6 +358,7 @@ if (clave === claveingresada && montoaretirar < balance) {
 
 // Ejercicio 2.
 /* Solicitar al usuario su día y mes de nacimiento e indicar cual es su signo zodiacal. */
+
 let dianacimiento = parseInt(prompt("Ingrese su día de nacimiento"));
 let mesnacimiento = prompt("Ingrese su mes de nacimiento");
 
